@@ -38,7 +38,7 @@ bot.on("message", async function(message) {
                 title: '',
                 fields: [{
                     name: "**__Lien d'invitation discord__**",
-                    value: "[**Clique droit => Copier**](https://discord.gg/AtAm7pn)",
+                    value: "[**Clique droit => Copier**](https://discord.gg/RJcxGct)",
                     inline: false
                 }],
                 footer: {
