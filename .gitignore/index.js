@@ -20,35 +20,6 @@ bot.on("guildMemberAdd", member => {
     .setTimestamp()
     bvn.send(embed)
 })
-
-bot.on("message", async function(message) {
-    if (message.author.equals(bot.user)) return;
-
-    if (!message.content.startsWith(prefix)) return;
-
-    var args = message.content.substring(prefix.length).split(" ");
-
-
-    switch(args[0].toLowerCase()) {
-        case "invite":
-        message.channel.send("", {
-            embed: {
-                color: 0xFF0000,
-                author: message.author.name,
-                title: '',
-                fields: [{
-                    name: "**__Lien d'invitation discord__**",
-                    value: "[**Clique droit => Copier**](https://discord.gg/RJcxGct)",
-                    inline: false
-                }],
-                footer: {
-                    footer: "Partager ce lien a tous vos amis !",
-                },
-            }
-        });
-        break;
-    }
-});
 bot.on("message", async function(message) {
     if (message.author.equals(bot.user)) return;
 
