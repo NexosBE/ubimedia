@@ -21,3 +21,11 @@ bot.on("guildMemberAdd", member => {
     bvn.send(embed)
 })
 
+if (message.content === '.mtnce'){
+    var help_embed = new Discord.RichEmbed()
+        .setColor('#FA6400')
+        .addField("⚠ Le serveur sera en maintenance pour un petit temps !⚠")
+    message.channel.sendEmbed(help_embed);
+    console.log("Commande Help Demandée !");
+}
+
