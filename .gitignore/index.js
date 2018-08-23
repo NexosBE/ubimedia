@@ -49,4 +49,33 @@ bot.on("message", async function(message) {
         break;
     }
 });
+bot.on("message", async function(message) {
+    if (message.author.equals(bot.user)) return;
+
+    if (!message.content.startsWith(prefix)) return;
+
+    var args = message.content.substring(prefix.length).split(" ");
+
+
+    switch(args[0].toLowerCase()) {
+        case "maintenance":
+        message.channel.send("", {
+            embed: {
+                color: 0xFF0000,
+                author: message.author.name,
+                title: '',
+                fields: [{
+                    name: "**⚠️ Le serveur est en maintenance ! ⚠️**",
+                    value: "[**Invite discord (partage quand même a tes potes !)**](https://discord.gg/RJcxGct)",
+                    inline: false
+                }],
+                footer: {
+                    footer: "Partager ce lien a tous vos amis !",
+                },
+            }
+        });
+        break;
+    }
+});
+
 
