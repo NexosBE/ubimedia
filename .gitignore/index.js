@@ -21,11 +21,32 @@ bot.on("guildMemberAdd", member => {
     bvn.send(embed)
 })
 
-if (message.content === '.mtnce'){
-    var help_embed = new Discord.RichEmbed()
-        .setColor('#FA6400')
-        .addField("⚠ Le serveur sera en maintenance pour un petit temps !⚠")
-    message.channel.sendEmbed(help_embed);
-    console.log("Commande Help Demandée !");
-}
+bot.on("message", async function(message) {
+    if (message.author.equals(bot.user)) return;
+
+    if (!message.content.startsWith(prefix)) return;
+
+    var args = message.content.substring(prefix.length).split(" ");
+
+
+    switch(args[0].toLowerCase()) {
+        case "invite":
+        message.channel.send("", {
+            embed: {
+                color: 0xFF0000,
+                author: message.author.name,
+                title: '',
+                fields: [{
+                    name: "**__Lien d'invitation discord__**",
+                    value: "[**Clique droit => Copier**](https://discord.gg/AtAm7pn)",
+                    inline: false
+                }],
+                footer: {
+                    footer: "Partager ce lien a tous vos amis !",
+                },
+            }
+        });
+        break;
+    }
+});
 
