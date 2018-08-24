@@ -4,7 +4,7 @@ bot.login(process.env.TOKEN)
 var prefix = ("?")
 
 bot.on('ready', function() {
-    bot.user.setPresence({ game: { name: 'Nexos test..', type: 2} })
+    bot.user.setPresence({ game: { name: 'les clients..', type: 2} })
     console.log("Connected");
 });
 
