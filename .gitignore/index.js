@@ -50,6 +50,7 @@ bot.on("message", async function(message) {
                 },
             }
         });
+        message.delete()
         break;
     }
 });
