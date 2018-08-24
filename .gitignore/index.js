@@ -4,7 +4,7 @@ bot.login(process.env.TOKEN)
 var prefix = ("?")
 
 bot.on('ready', function() {
-    bot.user.setPresence({ game: { name: 'les clients a venir...', type: 2} })
+    bot.user.setPresence({ game: { name: 'Nexos test..', type: 2} })
     console.log("Connected");
 });
 
@@ -19,6 +19,11 @@ bot.on("guildMemberAdd", member => {
     .addField(`Nombre de membres après son arrivée`, member.guild.memberCount)
     .setTimestamp()
     bvn.send(embed)
+})
+
+bot.on('guildMemberAdd', member => {
+    var role = member.guild.roles.find('name', 'Nouveau')
+    member.addRole(role)
 })
 bot.on("message", async function(message) {
     if (message.author.equals(bot.user)) return;
@@ -48,5 +53,3 @@ bot.on("message", async function(message) {
         break;
     }
 });
-
-
